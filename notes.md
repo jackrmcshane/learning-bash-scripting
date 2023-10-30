@@ -56,3 +56,14 @@ echo ${a/world/everybody} --> hello everybody
 see "first_script.sh"
 
 # command substitution
+
+uname -r --> gives kernel version
+echo "The kernel version is: $(uname -r)."
+echo "Result: $(python3 -c 'print("Hello from Python!")' | tr [a-z] [A-Z])" 
+
+# arithmetic expansion
+
+* $[...] is deprecated version of this
+echo $(( 2 + 2 ))
+echo $(( 4 * 5 ))
+echo $(( 4 / 5 )) --> bash can only work with integers!!

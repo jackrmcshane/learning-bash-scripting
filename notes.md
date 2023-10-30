@@ -47,3 +47,12 @@
     * e.g. touch file_{01..12}{a..d} --> works the way you hope it would
 
 # parameter expansion
+
+a="hello world"
+echo $a; echo ${a} --> same output: hello world
+echo ${a:1:9} --> ello worl
+echo ${a/world/everybody} --> hello everybody
+
+see "first_script.sh"
+
+# command substitution

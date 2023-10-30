@@ -19,3 +19,8 @@
 * Builtins/Commands
     * echo -- note: ends line w/ newline
     * printf
+
+# Brackets and Braces in Bash
+
+* `()[]{}` act differently in bash than in other languages
+* often times, they can act as their own commands

@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+
+option=5
+if (($option==1)); then
+  read -ep "Favorite color? " -i "Blue" favcolor
+  echo "$favcolor"
+elif (($option==2)); then
+  if (($# < 3)); then
+    echo "This command requires three arguments:"
+    echo "username, userid, and favorite number"
+  else
+    echo "username: $1"
+    echo "userid: $2"
+    echo "fav number: $3"
+  fi
+elif (($option==3)); then
+  read -p "Favorite animal? " fav
+  while [[ -z $fav ]]; do
+    read -p "I need a response! What is your fav animal? " fav
+  done
+  echo "$fav was selected"
+elif (($option==4)); then
+  read -p "Favorite animal? [cat] " fav
+  if [[ -z $fav ]]; then
+    fav="cat"
+  fi
+  echo "$fav was selected"
+elif (($option==5)); then
+  read -p "What year? [nnnn] " year
+  until [[ $year =~ [0-9]{4} ]]; do
+    read -p "A four-digit year, please! [nnnn] " year
+  done
+  echo "Selected year: $year"
+fi

@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+greeting() {
+  echo "hello, $1!"
+}
+
+numberthings() {
+  echo "In: $FUNCNAME"
+  i=1
+  for f in "$@"; do
+    echo $i: "$f"
+    ((i++))
+  done
+}
+
+func() {
+  var2="Im var 2"
+  local var3="I'm var 3"
+}
+
+
+choice=2
+
+if (($choice==1)); then
+  greeting Scott
+  numberthings /*
+elif $((choice==2)); then
+  var1="Im var 1"
+  func
+  echo $var1
+  echo $var2 # this persists
+  echo $var3
+fi

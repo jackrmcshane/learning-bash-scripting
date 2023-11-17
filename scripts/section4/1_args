@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+first() {
+  # $0 is the name of the script
+  echo "The $0 script got the arg: $1"
+  echo "arg 2 is: $2"
+}
+
+for i in "$@"; do
+  echo $i
+done
+
+echo "there were $# arguments."

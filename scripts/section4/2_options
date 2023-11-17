@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+# `u:p:` is the option string we specify (tells what options are available/valid)
+# in this case -u and -p
+# using a `:` after the arg specifier (u or p in this case) tells the program 
+# to EXPECT a value for this argument, as in: -u jamcshan rather than just -u
+# adding a `:` at the very start of the option string tells program to capture 
+# any flags used that were not specified by the script
+while getopts :u:p:ab option; do
+  case $option in
+    u) user=$OPTARG;;
+    p) pass=$OPTARG;;
+    a) echo "got the 'a' flag";;
+    b) echo "got the 'b' flag";;
+    ?) echo "I dont know what $OPTARG is!"
+  esac
+done
+
+echo "user: $user / pass: $pass"

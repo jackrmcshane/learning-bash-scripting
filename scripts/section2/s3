@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+echo 'The kernel is $(uname -r).'
+echo "The kernel is $(uname -r)."
+
+echo -n "The kernel is $(uname -r)." # turns off the newline

@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+while_loop=true
+if $while_loop; then
+
+  echo "While Loop"
+  declare -i n=0
+  while ((n<10)); do
+    echo "n:$n"
+    ((n++))
+  done
+
+else
+
+  echo -e "Until Loop"
+  declare -i m=0
+  until ((m==10)); do
+    echo m:$m
+    ((m++))
+  done
+
+fi

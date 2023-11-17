@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+option=3
+if (($option==1)); then
+  # more options with: `help read`
+  echo "What is your name?"
+  read name
+
+  echo "What is your password?"
+  read -s pass # -s option: silent, does not show characters typed by user
+
+  # -p reads from the same line
+  read -p "What's your favorite animal? " animal
+
+  echo "name: $name, pass: $pass, animal: $animal"
+elif (($option==2)); then
+  select animal in "bird" "dog" "fish"; do
+    echo "You selected $animal"
+    break
+  done
+elif (($option==3)); then
+  select animal in "bird" "dog" "fish" "quit"; do
+    case $animal in
+      bird) echo "Birds like to fly.";;
+      dog) echo "Dogs like to play fetch.";;
+      fish) echo "Fish like to swim.";;
+      quit) break;;
+      *) echo "I'm not sure what that is."
+    esac
+  done
+fi

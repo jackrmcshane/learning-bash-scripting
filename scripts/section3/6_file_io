@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+write_file() {
+  for i in {1..5}; do
+    echo "This is line $i" >> textfile.txt
+  done
+}
+
+read_file() {
+  while read f; do  # this is weird
+    echo "I read a line and it says: $f"
+  done < textfile.txt
+}
+
+read_file
